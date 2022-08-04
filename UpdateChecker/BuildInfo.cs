@@ -9,7 +9,7 @@ using Main = UpdateChecker.Main;
 [assembly: MelonInfo(typeof(Main), ModConstants.NAME, ModConstants.VERSION, ModConstants.AUTHOR, ModConstants.DOWNLOAD_LINK)]
 [assembly: MelonColor(ConsoleColor.Magenta)]
 [assembly: ModJsonInfo(
-        249, 
+        53, 
         "- Simple mod for people who dislike auto updaters\n" +
         "- Checks for mod updates and lets you know in the console\n" +
         "- Only works for mods that follow the semver format",
