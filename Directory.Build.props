@@ -1,0 +1,150 @@
+<Project>
+    <PropertyGroup>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <ClearOutputDirectory>False</ClearOutputDirectory>
+        <DOCKERVAR>$(DOCKER_RUNNING)</DOCKERVAR>
+        <CVRFolder>$(CVR_DIRECTORY)</CVRFolder>
+        <ModRefs>$(CVRFolder)\Mods</ModRefs>
+        <MelonManaged>$(CVRFolder)\ChilloutVR_Data\Managed</MelonManaged>
+        <MelonLoader>$(CVRFolder)\MelonLoader</MelonLoader>
+        <LangVersion>10</LangVersion>
+        <GithubRepoUrl>https://github.com/gompoc/CVRMods</GithubRepoUrl>
+        <CIVAR>$(CI)</CIVAR>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(CIVAR)'!=''">
+        <MelonManaged>$(MsBuildThisFileDirectory)Libs\</MelonManaged>
+        <MelonLoader>$(MsBuildThisFileDirectory)Libs\</MelonLoader>
+        <ModRefs>$(MsBuildThisFileDirectory)Libs\</ModRefs>
+    </PropertyGroup>
+
+    <ItemGroup Condition="'$(CVRReferences)' == 'true'">
+        <EmbeddedResource Include="$(MsBuildThisFileDirectory)Common\_dummy_.dll"/>
+        <EmbeddedResource Include="$(MsBuildThisFileDirectory)Common\_dummy2_.dll"/>
+        <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <SpecificVersion>false</SpecificVersion>
+            <Private>false</Private>
+            <HintPath>$(MelonManaged)\UnityEngine.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AssetBundleModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <SpecificVersion>false</SpecificVersion>
+            <Private>false</Private>
+            <HintPath>$(MelonManaged)\UnityEngine.AssetBundleModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <SpecificVersion>false</SpecificVersion>
+            <Private>false</Private>
+            <HintPath>$(MelonManaged)\UnityEngine.AudioModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <SpecificVersion>false</SpecificVersion>
+            <Private>false</Private>
+            <HintPath>$(MelonManaged)\UnityEngine.AnimationModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.InputLegacyModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <SpecificVersion>false</SpecificVersion>
+            <Private>false</Private>
+            <HintPath>$(MelonManaged)\UnityEngine.InputLegacyModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ClothModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <SpecificVersion>false</SpecificVersion>
+            <Private>false</Private>
+            <HintPath>$(MelonManaged)\UnityEngine.ClothModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <SpecificVersion>false</SpecificVersion>
+            <Private>false</Private>
+            <HintPath>$(MelonManaged)\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <SpecificVersion>false</SpecificVersion>
+            <Private>false</Private>
+            <HintPath>$(MelonManaged)\UnityEngine.UI.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <SpecificVersion>false</SpecificVersion>
+            <Private>false</Private>
+            <HintPath>$(MelonManaged)\UnityEngine.UIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <SpecificVersion>false</SpecificVersion>
+            <Private>false</Private>
+            <HintPath>$(MelonManaged)\UnityEngine.TextRenderingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ParticleSystemModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <SpecificVersion>false</SpecificVersion>
+            <Private>false</Private>
+            <HintPath>$(MelonManaged)\UnityEngine.ParticleSystemModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <SpecificVersion>false</SpecificVersion>
+            <Private>false</Private>
+            <HintPath>$(MelonManaged)\UnityEngine.PhysicsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.TextMeshPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <SpecificVersion>false</SpecificVersion>
+            <Private>false</Private>
+            <HintPath>$(MelonManaged)\Unity.TextMeshPro.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityWebRequestModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <SpecificVersion>false</SpecificVersion>
+            <Private>false</Private>
+            <HintPath>$(MelonManaged)\UnityEngine.UnityWebRequestModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityWebRequestWWWModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <SpecificVersion>false</SpecificVersion>
+            <Private>false</Private>
+            <HintPath>$(MelonManaged)\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.VRModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <SpecificVersion>false</SpecificVersion>
+            <Private>false</Private>
+            <HintPath>$(MelonManaged)\UnityEngine.VRModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.XRModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <SpecificVersion>false</SpecificVersion>
+            <Private>false</Private>
+            <HintPath>$(MelonManaged)\UnityEngine.XRModule.dll</HintPath>
+        </Reference>
+        <Reference Include="MelonLoader, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <SpecificVersion>false</SpecificVersion>
+            <Private>false</Private>
+            <HintPath>$(MelonLoader)\MelonLoader.dll</HintPath>
+        </Reference>
+        <Reference Include="0Harmony, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <SpecificVersion>false</SpecificVersion>
+            <Private>false</Private>
+            <HintPath>$(MelonLoader)\0Harmony.dll</HintPath>
+        </Reference>
+        <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <SpecificVersion>false</SpecificVersion>
+            <Private>false</Private>
+            <HintPath>$(MelonManaged)\Assembly-CSharp.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+        <PropertyGroup>
+            <OutputPath>$(MsBuildThisFileDirectory)\Output\$(Configuration)\</OutputPath>
+        </PropertyGroup>
+        <ItemGroup Condition="'$(CVRReferences)' == 'true'">
+        <!--
+       <ProjectReference Include="$(MsBuildThisFileDirectory)/Tools/IntegrityCheckGenerator/IntegrityCheckGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+       <ProjectReference Include="$(MsBuildThisFileDirectory)Tools\IntegrityCheckWeaver\IntegrityCheckWeaver.csproj" PrivateAssets="all"/>
+       -->
+       <ProjectReference Include="$(MsBuildThisFileDirectory)Tools\MDBGenerator\MDBGenerator.csproj" PrivateAssets="all"/>
+    </ItemGroup>
+    <Target Name="MDBGenerator" AfterTargets="PostBuildEvent" Condition="'$(NoModReferences)' != 'true'">
+       <Exec Command="$(MsBuildThisFileDirectory)\Output\$(Configuration)\MDBGenerator.exe $(OutputPath)/$(AssemblyName).dll" />
+    </Target>
+    <!--
+    <Target Name="RandomizeIntegrityChecks" AfterTargets="MDBGenerator" Condition="'$(NoModReferences)' != 'true'">
+       <Exec Command="$(MsBuildThisFileDirectory)\Output\$(Configuration)\IntegrityCheckWeaver.exe $(OutputPath)/$(AssemblyName).dll" />
+    </Target>
+    -->
+    <Target Name="GenerateModJson" AfterTargets="MDBGenerator" Condition="'$(GenerateJson)' == 'true'">
+        <Exec Command="$(MsBuildThisFileDirectory)\Output\$(Configuration)\ModJsonGenerator.exe $(OutputPath)/$(AssemblyName).dll $(CVRFolder) $(MsBuildThisFileDirectory) $(GithubRepoUrl) '$(CIVAR)'" />
+    </Target>
+    <Target Name="CopyModToModsFolder" AfterTargets="GenerateModJson" Condition="'$(CopyToMods)' == 'true' And '$(CIVAR)'==''">
+        <Exec Command="xcopy /c /f /y $(OutputPath)\$(AssemblyName).dll $(CVRFolder)\Mods" />
+        <Exec Command="xcopy /c /f /y $(OutputPath)\$(AssemblyName).dll.mdb $(CVRFolder)\Mods" />
+    </Target>
+</Project>

@@ -1,0 +1,13 @@
+/Output
+obj/
+.idea
+ModJsons/
+packages/
+*.user
+Libs/*.dll
+Libs/*.txt
+Libs/*.db
+LibsAndroid/*.dll
+LibsAndroid/*.txt
+LibsAndroid/*.db
+Dev/
