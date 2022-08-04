@@ -31,5 +31,5 @@ public static class ModConstants
     public const string VERSION = "1.0.0";
     public const string NAME = "UpdateChecker";
     public const string AUTHOR = "gompo, DubyaDude";
-    public const string DOWNLOAD_LINK = "https://github.com/gompoc/VRChatMods/releases/";
+    public const string DOWNLOAD_LINK = "https://github.com/gompoc/CVRMods/releases/";
 }
